@@ -1,4 +1,4 @@
-function plot (data) {
+function plot(data) {
   const ctx = document.getElementById('myChart');
 
   const dataset = {
