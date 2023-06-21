@@ -1,4 +1,4 @@
-let plot = (data) => {
+function plot (data) {
   const ctx = document.getElementById('myChart');
 
   const dataset = {
@@ -18,7 +18,7 @@ let plot = (data) => {
   const chart = new Chart(ctx, config)
 }
 
-let bar = (data) => {
+function bar (data) {
   const ctx = document.getElementById('myChart2');
 
   const dataset = {
@@ -38,7 +38,7 @@ let bar = (data) => {
   const chart = new Chart(ctx, config)
 }
 //cargar localmente 
-let load = (data) => {
+function load(data) {
   console.log(data);
   let latitud = data["latitude"]; //52.52
   let longitude = data["longitude"];
@@ -53,7 +53,7 @@ let load = (data) => {
   bar(data)
 }
 
-let loadInocar = () => {
+function loadInocar() {
   let url_proxy = 'https://cors-anywhere.herokuapp.com/'
   let URL = url_proxy + 'https://www.inocar.mil.ec/mareas/consultan.php';
 
