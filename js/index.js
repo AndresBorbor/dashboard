@@ -36,10 +36,10 @@ let bar = (data) => {
   };
   const chart = new Chart(ctx, config)
 }
-//cargar localmente 
+
 let load = (data) => {
   console.log(data);
-  let latitud = data["latitude"]; //52.52
+  let latitud = data["latitude"];
   let longitude = data["longitude"];
   let timezone = data["timezone"];
   let elevation = data["elevation"];
@@ -78,10 +78,8 @@ let loadInocar = () => {
         console.log(data)
       })
       .catch(console.error);
-
   } else {
     load(JSON.parse(meteo))
-
   }
   loadInocar();
 })();
