@@ -52,7 +52,7 @@ let load = (data) => {
 }
 
 let loadInocar = () => {
-  let url_proxy = 'http://localhost:8080/' //'https://cors-anywhere.herokuapp.com/'
+  let url_proxy = 'https://cors-anywhere.herokuapp.com/'
   let URL = url_proxy + 'https://www.inocar.mil.ec/mareas/consultan.php';
   fetch(URL)
     .then(response => response.text())
@@ -69,12 +69,13 @@ let loadInocar = () => {
 (function () {
   let meteo = localStorage.getItem('meteo');
   if (meteo == null) {
-    let URL = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&daily=uv_index_max&timezone=America%2FLos_Angeles';
+    let URL = 'https://api.open-meteo.com/v1/forecast?latitude=-2.1962&longitude=-79.8862&hourly=temperature_2m&daily=uv_index_max&timezone=auto';
     fetch(URL)
       .then(response => response.json())
       .then(data => {
         load(data)
         localStorage.setItem("meteo", JSON.stringify(data))
+        console.log(data)
       })
       .catch(console.error);
 
